@@ -1,5 +1,9 @@
 Changelog for the Astro website template for Dockside Web Solutions, LLC
 
+3/1/26
+Added:
+Tailwind CSS Intellisense extension
+
 2/23/26 - Created Layout
 Added:
 TailwindCSS
