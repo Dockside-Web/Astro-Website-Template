@@ -1,5 +1,5 @@
 {
-  "name": "client-project-name",
+  "name": "astro-website-template",
   "compatibility_date": "2026-03-24",
   "assets": {
     "directory": "./dist",
