@@ -4,16 +4,6 @@
   "assets": {
     "directory": "./dist"
   },
-  "routes": [
-    {
-      "pattern": "clientdomain.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "www.clientdomain.com",
-      "custom_domain": true
-    }
-  ],
   "observability": {
     "enabled": true
   }
