@@ -1,5 +1,8 @@
 Changelog for the Astro website template for Dockside Web Solutions, LLC
 
+3/21/26
+Added ContactForm component
+
 3/14/26
 Updated to Astro 6
 

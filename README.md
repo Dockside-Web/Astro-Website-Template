@@ -18,3 +18,6 @@ Description
 
 astro.config.mjs
 site
+
+wrangler.jsonc
+name

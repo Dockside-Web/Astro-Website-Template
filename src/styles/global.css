@@ -2,11 +2,12 @@
 @import "tailwindcss";
 
 @theme {
-  --brand-color-blue: #1e40af;
-  --brand-color-green: #16a34a;
+  --color-brand-primary: #1e40af;
+  --color-brand-secondary: #16a34a;
+  --color-brand-accent: #f59e0b;
 
-  --font-sans: "Source Sans 3", "system-ui", "sans-serif";
-  --font-display: "Fraunces", "serif";
+  --font-brand: "Source Sans 3", "system-ui", "sans-serif";
+  --font-headers: "Fraunces", "serif";
 }
 
 /* Force hover to work on all devices (especially laptops with touchscreens) */
@@ -18,7 +19,7 @@
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: var(--font-sans);
+    font-family: var(--font-brand);
   }
 
   h1,
@@ -27,6 +28,6 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-display);
+    font-family: var(--font-headers);
   }
 }
