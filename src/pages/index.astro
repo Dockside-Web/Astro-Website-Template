@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const metaDescription = "DESCRIPTION";
+// Every page needs a unique description (140-160 chars).
+const metaDescription = "";
 ---
 
+<!-- Homepage: no title prop, so the <title> becomes "Name | Tagline" -->
 <Layout description={metaDescription}>
-  <h1 class="text-3xl font-bold">Hello, World!!!!!</h1>
+  <!-- Exactly one <h1> per page -->
+  <h1 class="p-8 text-3xl font-bold">Hello, World!</h1>
 </Layout>

@@ -1,19 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+/* FILL IN FOR EVERY NEW CLIENT
+   Colors: replace the placeholder grays with the brand colors.
+   Fonts: add them in astro.config.mjs, then point these at the cssVariable,
+   e.g. --font-brand: var(--font-body); */
 @theme {
-  --color-brand-primary: #1e40af;
-  --color-brand-secondary: #16a34a;
-  --color-brand-accent: #f59e0b;
+  --color-brand-primary: #111827;
+  --color-brand-secondary: #6b7280;
+  --color-brand-accent: #9ca3af;
 
-  --font-brand: "Source Sans 3", "system-ui", "sans-serif";
-  --font-headers: "Fraunces", "serif";
+  --font-brand: system-ui, sans-serif;
+  --font-headers: system-ui, sans-serif;
 }
 
 /* Force hover to work on all devices (especially laptops with touchscreens) */
-@variant hover (&:hover);
+@custom-variant hover (&:hover);
 
 @layer base {
+  html {
+    /* Keeps anchor targets from hiding under a fixed header */
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     margin: 0;
@@ -29,5 +38,45 @@
   h5,
   h6 {
     font-family: var(--font-headers);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-accent);
+    outline-offset: 2px;
+  }
+
+  /* Respect users who have reduced motion turned on in their OS */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Fade-up on scroll. Add data-reveal to any element. Content stays visible
+   if JS fails (the .js class is added in Layout.astro). */
+@layer components {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+  .js [data-reveal].revealed {
+    opacity: 1;
+    transform: none;
   }
 }
